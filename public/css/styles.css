@@ -1,0 +1,73 @@
+@import url("https://api.fontshare.com/v2/css?f[]=satoshi@1&display=swap");
+
+*{
+    font-family: "Satoshi", monospace;
+    color: #56E39F;
+    margin: 0;
+    padding: 0;
+    transition: all 0.1s ease-in-out;
+}
+
+p{
+    color: #56E39FAE;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 0;
+    background-color: #171717;
+}
+
+.content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.content__hangman {
+    font-family: monospace;
+    font-size: 16px;
+    white-space: pre;
+    line-height: 1.2;
+    text-align: left;
+    margin: 20px auto;
+}
+
+.content__word{
+    line-height: 24px;
+}
+
+.content__guess{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.guess__input{
+    background-color: #56E39F50;
+    border: 1px solid #56E39F80;
+    padding: 0 15px;
+    height: 40px;
+}
+
+.guess__button{
+    font-family: "Satoshi", monospace;
+    border: 1px solid #56E39F;
+    background-color: #56E39F;
+    color: #171717;
+    height: 42px;
+    padding: 0 15px;
+    font-weight: 700;
+}
+
+.guess__input:focus{
+    outline: none;
+    border: 1px solid #56E39F;
+    transition: all 0.1s ease-in-out;
+}

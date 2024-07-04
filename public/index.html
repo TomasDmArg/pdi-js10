@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ahorcado</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <main class="content">
+        <h1>Ahorcado programación</h1>
+        <p>Probá cuanto sabes de lenguajes de programación!</p>
+        <section class="content__hangman" id="hangman"></section>
+        <section class="content__word" id="word"></section>
+        <section class="content__guesses" id="guesses">Letras usadas: </section>
+        <section class="content__guess">
+            <input type="text" id="input" maxlength="1" class="guess__input">
+            <button class="guess__button" id="guessButton">Adivinar</button>
+        </section>
+        <p id="message"></p>
+    </main>
+    <script src="/js/main.js" type="module"></script>
+</body>
+</html>
