@@ -1,20 +1,19 @@
 import path from 'path';
 import cors from 'cors';
 import express, { json } from 'express';
-import { getRandomWord } from './utils/random';
+import { getRandomWord } from './utils/random.js';
 import { createClient } from '@supabase/supabase-js';
 
 const app = express();
-const port = 3000;
 app.use(cors());
 app.use(json());
 
 const supabase = createClient(process.env.SUPABASE_URL, process.env.SUPABASE_SERVICE_ROLE_KEY);
 
 app.use(express.static('public'));
-app.use('/css', express.static(path.join(__dirname, 'public/css')));
-app.use('/js', express.static(path.join(__dirname, 'public/js')));
-app.use('/js/constants', express.static(path.join(__dirname, 'public/js/constants')));
+app.use('/css', express.static(path.join(process.cwd(), 'public/css')));
+app.use('/js', express.static(path.join(process.cwd(), 'public/js')));
+app.use('/js/constants', express.static(path.join(process.cwd(), 'public/js/constants')));
 
 app.get('/api/word', (req, res) => {
     const word = getRandomWord();
@@ -22,12 +21,9 @@ app.get('/api/word', (req, res) => {
 });
 
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'index.html'));
+    res.sendFile(path.join(process.cwd(), 'public', 'index.html'));
 });
 
-/**
- * This endpoint uses the Supabase private key to create a new user and add it to the users table.
- */
 app.post('/api/register', async (req, res) => {
     const { email, password, username } = req.body;
 
@@ -54,9 +50,6 @@ app.post('/api/register', async (req, res) => {
     res.json({ message: 'Registro exitoso. Por favor, verifica tu email.' });
 });
 
-/**
- * This endpoint adds a new score to the database
- */
 app.post('/api/score', async (req, res) => {
     const { puntos, tiempo } = req.body;
     const token = req.headers.authorization?.split(' ')[1];
@@ -82,6 +75,5 @@ app.post('/api/score', async (req, res) => {
     res.json({ message: 'Puntuación guardada con éxito' });
 });
 
-app.listen(port, () => {
-    console.log(`Servidor corriendo en http://localhost:${port}`);
-});
+// Exporta la aplicación Express
+export default app;
