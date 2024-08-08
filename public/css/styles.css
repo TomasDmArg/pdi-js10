@@ -1,6 +1,6 @@
 @import url("https://api.fontshare.com/v2/css?f[]=satoshi@1&display=swap");
 
-*{
+* {
     font-family: "Satoshi", monospace;
     color: #56E39F;
     margin: 0;
@@ -8,7 +8,7 @@
     transition: all 0.1s ease-in-out;
 }
 
-p{
+p {
     color: #56E39FAE;
 }
 
@@ -21,7 +21,7 @@ body {
     background-color: #171717;
 }
 
-.content{
+.content {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -37,11 +37,11 @@ body {
     margin: 20px auto;
 }
 
-.content__word{
+.content__word {
     line-height: 24px;
 }
 
-.content__guess{
+.content__guess {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -49,14 +49,14 @@ body {
     margin-top: 20px;
 }
 
-.guess__input{
+.guess__input {
     background-color: #56E39F50;
     border: 1px solid #56E39F80;
     padding: 0 15px;
     height: 40px;
 }
 
-.guess__button{
+.guess__button, button {
     font-family: "Satoshi", monospace;
     border: 1px solid #56E39F;
     background-color: #56E39F;
@@ -64,10 +64,144 @@ body {
     height: 42px;
     padding: 0 15px;
     font-weight: 700;
+    cursor: pointer;
 }
 
-.guess__input:focus{
+.guess__input:focus {
     outline: none;
     border: 1px solid #56E39F;
     transition: all 0.1s ease-in-out;
+}
+
+#nameDisplay{
+    background-color: #56E39F30;
+    color: #56E39F;
+    border: 1px solid #56E39F;
+    width: fit-content;
+    min-width: 200px;
+    height: 42px;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0 15px;    
+}
+
+#leaderboard > h2 {
+    margin-bottom: 20px;
+}
+
+#score{
+    margin-top: 20px;
+}
+
+/* Nuevos estilos para los elementos añadidos */
+
+header {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    padding: 20px;
+    box-sizing: border-box;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+nav button {
+    margin-left: 10px;
+}
+
+#authModal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+#authForm {
+    background-color: #171717;
+    padding: 20px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    width: min(500px, 100%);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: auto;
+    position: relative;
+}
+
+#authForm > h2{
+    margin-bottom: 20px;
+}
+
+#closeAuthFormButton{
+    position: absolute;
+    right: 0;
+    top: 0;
+    background-color: transparent;
+    border: none;
+    height: 60px;
+    width: 60px;
+    cursor: pointer;
+    transition: all 0.1s ease-in-out;
+}
+
+#closeAuthFormButton:hover{
+    transition: all 0.1s ease-in-out;
+    transform: rotate(90deg);
+}
+
+#authForm input {
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: #56E39F50;
+    border: 1px solid #56E39F80;
+    color: #56E39F;
+}
+
+#authForm button {
+    margin-top: 10px;
+}
+
+#leaderboard {
+    margin-top: 30px;
+    width: 100%;
+    max-width: 600px;
+}
+
+#scoresTable {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#scoresTable th, #scoresTable td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #56E39F50;
+}
+
+#scoresTable th {
+    background-color: #56E39F20;
+    font-weight: bold;
+}
+
+#scoresTable tr:hover {
+    background-color: #56E39F10;
 }

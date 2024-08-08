@@ -7,18 +7,57 @@
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
+    <header>
+        <nav>
+            <div id="nameDisplay" style="display:none;"></div>
+            <button id="loginBtn">Iniciar sesión</button>
+            <button id="registerBtn">Registrarse</button>
+            <button id="logoutBtn" style="display:none;">Cerrar sesión</button>
+        </nav>
+    </header>
     <main class="content">
         <h1>Ahorcado programación</h1>
         <p>Probá cuanto sabes de lenguajes de programación!</p>
+        <div id="score">Puntuación: 0</div>
+        <div id="timer">Tiempo: 0.0s</div>
         <section class="content__hangman" id="hangman"></section>
         <section class="content__word" id="word"></section>
         <section class="content__guesses" id="guesses">Letras usadas: </section>
         <section class="content__guess">
-            <input type="text" id="input" maxlength="1" class="guess__input">
+            <input autocomplete="off" type="text" id="input" maxlength="1" class="guess__input">
             <button class="guess__button" id="guessButton">Adivinar</button>
         </section>
         <p id="message"></p>
     </main>
+    <section id="authModal" style="display:none;">
+        <form id="authForm">
+            <h2 id="authFormTitle"></h2>
+            <button id="closeAuthFormButton">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" color="#000000" fill="none">
+                    <path d="M19.0005 4.99988L5.00049 18.9999M5.00049 4.99988L19.0005 18.9999" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+            </button>
+            <input type="email" id="email" required placeholder="Email">
+            <input type="password" id="password" required placeholder="Contraseña">
+            <input type="text" id="name" placeholder="Nombre" style="display:none;">
+            <button type="submit">Enviar</button>
+        </form>
+    </section>
+    <section id="leaderboard" style="display:none;">
+        <h2>Tabla de puntuaciones</h2>
+        <table id="scoresTable">
+            <thead>
+                <tr>
+                    <th>Posición</th>
+                    <th>Nombre</th>
+                    <th>Puntos</th>
+                    <th>Tiempo</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </section>
+    <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
     <script src="/js/main.js" type="module"></script>
 </body>
 </html>
