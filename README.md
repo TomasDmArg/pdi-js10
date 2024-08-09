@@ -91,10 +91,10 @@ Para instalar y ejecutar el proyecto:
 
 El juego estará disponible localmente en `http://localhost:3000`.
 
-## Visualización en línea
+## Visualización
 
-El proyecto se encuentra disponible para su visualización y uso en línea en la siguiente dirección:
+El proyecto se encuentra disponible para su visualización y uso en la siguiente dirección:
 
 [https://pdi.tdm.ar/](https://pdi.tdm.ar/)
 
-Esta versión en línea permite acceder al juego sin necesidad de instalación local, facilitando su uso y distribución entre los estudiantes y demás interesados.
+Esta versión permite acceder al juego sin necesidad de instalación local, facilitando su uso y distribución entre los estudiantes y demás interesados.
