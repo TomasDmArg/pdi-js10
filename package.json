@@ -9,7 +9,7 @@
     "start": "bun run app.js"
   },
   "engines": {
-    "node": "14.x"
+    "node": "20.x"
   },
   "keywords": [],
   "author": "",
