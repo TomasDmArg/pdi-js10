@@ -67,6 +67,11 @@ body {
     cursor: pointer;
 }
 
+#loginBtn {
+    background-color: #56E39F50;
+    color: #56E39F;
+}
+
 .guess__input:focus {
     outline: none;
     border: 1px solid #56E39F;
@@ -136,8 +141,6 @@ nav button {
     background-color: #171717;
     padding: 20px;
     border-radius: 5px;
-    display: flex;
-    flex-direction: column;
     width: min(500px, 100%);
     height: 100%;
     display: flex;
@@ -145,6 +148,17 @@ nav button {
     justify-content: center;
     margin-left: auto;
     position: relative;
+}
+
+#authForm input:focus {
+    outline: none;
+    border: 2px solid #56E39F;
+    transition: all 0.1s ease-in-out;
+}
+
+#authForm button:focus{
+    outline: none;
+    background-color: #56E39FCC;
 }
 
 #authForm > h2{

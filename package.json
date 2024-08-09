@@ -6,10 +6,7 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "bun run index.js"
-  },
-  "engines": {
-    "node": "20.x"
+    "start": "bun run server.js"
   },
   "keywords": [],
   "author": "",

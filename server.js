@@ -15,13 +15,13 @@ app.use('/css', express.static(path.join(process.cwd(), 'public/css')));
 app.use('/js', express.static(path.join(process.cwd(), 'public/js')));
 app.use('/js/constants', express.static(path.join(process.cwd(), 'public/js/constants')));
 
+app.get('/', (req, res) => {
+    res.sendFile(path.join(process.cwd(), 'public', 'index.html'));
+});
+
 app.get('/api/word', (req, res) => {
     const word = getRandomWord();
     res.json({ word });
-});
-
-app.get('/', (req, res) => {
-    res.sendFile(path.join(process.cwd(), 'public', 'index.html'));
 });
 
 app.post('/api/register', async (req, res) => {
@@ -79,5 +79,4 @@ app.listen(3000, () => {
     console.log(`Servidor corriendo en http://localhost:3000`);
 });
 
-// Exporta la aplicación Express
 export default app;
