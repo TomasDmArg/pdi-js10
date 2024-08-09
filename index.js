@@ -46,7 +46,7 @@ app.post('/api/register', async (req, res) => {
     if (userInsertDataError) {
         return res.status(500).json({ error: 'Error al registrar usuario' });
     }
-    
+
     res.json({ message: 'Registro exitoso. Por favor, verifica tu email.' });
 });
 
@@ -73,6 +73,10 @@ app.post('/api/score', async (req, res) => {
     }
 
     res.json({ message: 'Puntuación guardada con éxito' });
+});
+
+app.listen(3000, () => {
+    console.log(`Servidor corriendo en http://localhost:3000`);
 });
 
 // Exporta la aplicación Express
